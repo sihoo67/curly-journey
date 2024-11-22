@@ -1,42 +1,76 @@
+/* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  #game {
-    display: inline-block;
-    margin-top: 20px;
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin: 0 auto;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+/* 게임 제목 */
+h1 {
+  color: #333;
+}
+
+/* 게임 보드 */
+#game {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 돌이 놓인 칸 */
+td.taken {
+  cursor: not-allowed;
+}
+
+/* 승리 메시지 */
+#winner {
+  margin-top: 20px;
+  font-size: 24px;
+  color: green;
+}
+
+/* 반응형 디자인 - 작은 화면에서 보드 크기 조절 */
+@media screen and (max-width: 600px) {
   td {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ccc;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 20px;
-    cursor: pointer;
+      width: 25px;
+      height: 25px;
+      font-size: 18px;
   }
-  
-  td.taken {
-    cursor: not-allowed;
-  }
-  
+
   #winner {
-    margin-top: 20px;
-    font-size: 24px;
-    color: green;
+      font-size: 18px;
   }
-  
+}
+
+/* PWA 스타일링 - 화면에 맞게 UI 최적화 */
+@media screen and (max-width: 400px) {
+  h1 {
+      font-size: 18px;
+  }
+
+  td {
+      width: 20px;
+      height: 20px;
+      font-size: 16px;
+  }
+
+  #winner {
+      font-size: 16px;
+  }
+}
