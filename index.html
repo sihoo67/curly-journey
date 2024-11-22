@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오목 게임</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>오목 게임</h1>
+  <div id="game">
+    <table id="board"></table>
+  </div>
+  <div id="winner"></div>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyB2GfwL3yUoCj5zRU8DRp9NhUHg8sIsiHY",
+      authDomain: "omok-ping9.firebaseapp.com",
+      projectId: "omok-ping9",
+      storageBucket: "omok-ping9.firebasestorage.app",
+      messagingSenderId: "352183527250",
+      appId: "1:352183527250:web:05b886af2c37b4d827fc8b",
+      measurementId: "G-604WFSNMWC"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
