@@ -38,7 +38,7 @@ function makeMove(row, col, cell) {
 // Check for winner
 function checkWinner(row, col) {
   const directions = [
-    { dr: 0, dc: 1 }, // →
+    { dr: 0, dc: 1 }, // → 
     { dr: 1, dc: 0 }, // ↓
     { dr: 1, dc: 1 }, // ↘
     { dr: 1, dc: -1 }, // ↙
@@ -66,3 +66,24 @@ function countStones(row, col, dr, dc) {
   }
   return count;
 }
+
+// Reset game function
+function resetGame() {
+  // Reset board
+  for (let i = 0; i < BOARD_SIZE; i++) {
+    for (let j = 0; j < BOARD_SIZE; j++) {
+      board[i][j] = null;
+      const cell = boardElement.rows[i].cells[j];
+      cell.textContent = '';
+      cell.classList.remove("taken");
+    }
+  }
+  // Reset winner text
+  document.getElementById("winner").textContent = '';
+  // Reset player
+  currentPlayer = "●";
+  winner = null;
+}
+
+// Attach reset function to button
+document.getElementById("resetButton").addEventListener("click", resetGame);
