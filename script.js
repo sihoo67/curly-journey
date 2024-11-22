@@ -5,7 +5,9 @@ let winner = null;
 
 // Initialize board
 const boardElement = document.getElementById("board");
-for (let i = 0; i < BOARD_SIZE; i++) {
+
+function initializeBoard() {
+  for (let i = 0; i < BOARD_SIZE; i++) {
   const row = [];
   const tr = document.createElement("tr");
   for (let j = 0; j < BOARD_SIZE; j++) {
@@ -16,7 +18,10 @@ for (let i = 0; i < BOARD_SIZE; i++) {
   }
   board.push(row);
   boardElement.appendChild(tr);
+  }
 }
+
+initializeBoard();
 
 // Handle player move
 function makeMove(row, col, cell) {
@@ -67,23 +72,24 @@ function countStones(row, col, dr, dc) {
   return count;
 }
 
-// Reset game function
+// Reset game logic
 function resetGame() {
-  // Reset board
+  // Reset the board
+  const tdElements = document.querySelectorAll("td");
+  tdElements.forEach(td => {
+    td.textContent = "";
+    td.classList.remove("taken");
+  });
+
+  // Reset the board array and other variables
   for (let i = 0; i < BOARD_SIZE; i++) {
     for (let j = 0; j < BOARD_SIZE; j++) {
       board[i][j] = null;
-      const cell = boardElement.rows[i].cells[j];
-      cell.textContent = '';
-      cell.classList.remove("taken");
     }
   }
-  // Reset winner text
-  document.getElementById("winner").textContent = '';
-  // Reset player
+
   currentPlayer = "●";
   winner = null;
+  document.getElementById("winner").textContent = "";
 }
 
-// Attach reset function to button
-document.getElementById("resetButton").addEventListener("click", resetGame);

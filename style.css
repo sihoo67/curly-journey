@@ -45,6 +45,23 @@ td.taken {
   color: green;
 }
 
+/* 다시 하기 버튼 */
+#resetButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* 다시 하기 버튼 호버 효과 */
+#resetButton:hover {
+  background-color: #45a049;
+}
+
 /* 반응형 디자인 - 작은 화면에서 보드 크기 조절 */
 @media screen and (max-width: 600px) {
   td {
@@ -55,6 +72,11 @@ td.taken {
 
   #winner {
       font-size: 18px;
+  }
+
+  #resetButton {
+      font-size: 16px;
+      padding: 8px 16px;
   }
 }
 
@@ -72,5 +94,10 @@ td.taken {
 
   #winner {
       font-size: 16px;
+  }
+
+  #resetButton {
+      font-size: 14px;
+      padding: 6px 14px;
   }
 }
